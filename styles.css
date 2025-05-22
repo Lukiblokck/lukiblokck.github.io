@@ -1,0 +1,199 @@
+/* Carga las fuentes TTF locales */
+@font-face {
+  font-family: 'Exo2';
+  src: url('fonts/Exo2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('fonts/Orbitron-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('fonts/PixelifySans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables para colores y fuentes */
+:root {
+  --color-principal: #00ff88; /* verde */
+  --color-secundario: #ff00aa; /* rosa */
+  --fondo: #000000; /* fondo negro */
+  --fuente-texto: 'Exo2', sans-serif;
+  --fuente-titulo: 'Orbitron', sans-serif;
+  --fuente-nombre: 'PixelifySans', sans-serif;
+}
+
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fondo);
+  color: white;
+  font-family: var(--fuente-texto);
+  line-height: 1.5;
+}
+
+/* Header con barra superior */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #111111;
+}
+
+/* Imagen de perfil en header */
+.perfil-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-principal);
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: var(--color-principal);
+  text-decoration: none;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  transform: scale(1.1);
+  color: var(--color-secundario);
+}
+
+/* Sección principal */
+main {
+  padding: 2rem;
+}
+
+/* Títulos en general */
+h1, h2, h3, h4, h5 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-principal);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Para nombres, títulos pequeños o destacados */
+.nombre {
+  font-family: var(--fuente-nombre);
+  color: var(--color-secundario);
+  font-size: 2rem;
+}
+
+/* Redes sociales */
+.redes a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-secundario);
+  font-family: var(--fuente-nombre);
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.redes a:hover {
+  color: var(--color-principal);
+}
+
+/* Mini logo en redes */
+.mini-logo {
+  width: 32px;
+  height: 32px;
+}
+
+/* Galería de proyectos */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.galeria img {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid var(--color-principal);
+  border-radius: 8px;
+  transition: transform 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  border-color: var(--color-secundario);
+}
+
+/* Contacto */
+#contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contacto a {
+  color: var(--color-principal);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+#contacto a:hover {
+  color: var(--color-secundario);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background-color: #111111;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  border-top: 1px solid var(--color-principal);
+  user-select: none;
+}
+
+footer p:hover {
+  color: var(--color-secundario);
+  transition: color 0.3s ease;
+}
+
+.descripcion-proyectos textarea {
+  background-color: #111;
+  border: 2px solid var(--color-principal);
+  color: white;
+  resize: vertical;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.descripcion-proyectos textarea:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+}
+
+.guns-link span {
+  font-family: 'PixelifySans', sans-serif;
+  font-weight: bold;
+  color: #ff00aa; /* rosa fuerte, puedes ajustar */
+}
