@@ -53,3 +53,9 @@ dominio:
 echo "Hello World" > index.html
 
 ejemplo
+
+
+
+git add .
+git commit -m "Subo página web"
+git push origin main
