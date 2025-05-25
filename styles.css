@@ -147,7 +147,6 @@ h1, h2, h3, h4, h5 {
   color: var(--color-principal);
 }
 
-/* Sección GitHub */
 .github {
   display: flex;
   flex-direction: column;
@@ -160,7 +159,7 @@ h1, h2, h3, h4, h5 {
   gap: 0.5rem;
   text-decoration: none;
   color: var(--color-secundario);
-  font-family: var(--fuente-nombre);
+  font-family: var(--fuente-nombre); /* PixelifySans */
   font-size: 1.2rem;
   transition: color 0.3s;
   word-wrap: break-word;
