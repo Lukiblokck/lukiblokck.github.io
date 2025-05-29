@@ -312,3 +312,61 @@ footer p:hover {
     padding: 0.5rem;
   }
 }
+
+/* GitHub Stats responsive - añadir al final de tu styles.css */
+
+/* Hacer que las imágenes de GitHub Stats sean responsive */
+img[src*="github-readme-stats"],
+img[src*="vercel.app"],
+img[src*="komarev.com"] {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+/* Contenedor de GitHub Stats */
+.info div[style*="text-align:center"] {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Asegurar que las imágenes dentro de enlaces también sean responsive */
+.info a img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+/* Media queries específicas para GitHub Stats */
+@media (max-width: 768px) {
+  img[src*="github-readme-stats"],
+  img[src*="vercel.app"],
+  img[src*="komarev.com"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Reducir un poco el margen en móvil */
+  .info div[style*="text-align:center"] {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  img[src*="github-readme-stats"],
+  img[src*="vercel.app"],
+  img[src*="komarev.com"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0.25rem 0;
+  }
+  
+  /* Asegurar que no haya overflow horizontal */
+  .info div[style*="text-align:center"] {
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+  }
+}
