@@ -369,4 +369,74 @@ img[src*="komarev.com"] {
     padding: 0 0.25rem;
     box-sizing: border-box;
   }
+  
+  /* Sección del formulario */
+#mailme {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #00ff88;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Título */
+#mailme h3 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #00ff88;
+  margin-bottom: 20px;
+}
+
+/* Etiquetas */
+#mailme label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ff00aa;
+}
+
+/* Inputs y textarea */
+#mailme input[type="text"],
+#mailme textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+#mailme input[type="text"]:focus,
+#mailme textarea:focus {
+  border-color: #ff00aa;
+  box-shadow: 0 0 10px #ff00aa;
+}
+
+/* Botón enviar */
+#mailme input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ff88, #ff00aa);
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#mailme input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 0, 170, 0.7);
+}
+
 }
