@@ -441,4 +441,10 @@ img[src*="komarev.com"] {
   box-shadow: 0 0 15px rgba(255, 0, 170, 0.7);
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 }
