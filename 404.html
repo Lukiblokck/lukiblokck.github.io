@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Error 404 Not Found</title>
+  <style>
+    :root{ --size:120px }
+    html,body{height:100%;margin:0}
+    body{
+      background:#000;display:flex;align-items:center;justify-content:center;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#fff;overflow:hidden
+    }
+    #stage{position:fixed;inset:0}
+
+    .dvd{
+      position:absolute;width:var(--size);height:var(--size);display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:800;font-size:34px;user-select:none;
+      background:linear-gradient(180deg,#ffffff11,#ffffff05);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.6), inset 0 -6px 18px rgba(0,0,0,0.2);
+      transform-origin:center center;pointer-events:none
+    }
+    .dvd .label{font-family:monospace;font-size:28px;letter-spacing:2px}
+
+    @media (max-width:600px){:root{--size:90px}.dvd{font-size:20px}}
+  </style>
+</head>
+<body>
+  <div id="stage" aria-hidden="false" role="img" aria-label="Error 404, pantalla en movimiento">
+    <div class="dvd" id="dvd"><div class="label">404</div></div>
+  </div>
+
+  <script>
+    (function(){
+      const dvd = document.getElementById('dvd');
+      const stage = document.getElementById('stage');
+
+      let vw, vh, w, h;
+      let x = Math.random() * (window.innerWidth - 120);
+      let y = Math.random() * (window.innerHeight - 120);
+
+      function resize(){
+        const r = stage.getBoundingClientRect();
+        vw = r.width; vh = r.height;
+        w = dvd.offsetWidth; h = dvd.offsetHeight;
+        const maxX = Math.max(0, vw - w);
+        const maxY = Math.max(0, vh - h);
+        x = Math.min(Math.max(0, x), maxX);
+        y = Math.min(Math.max(0, y), maxY);
+      }
+      window.addEventListener('resize', resize);
+
+      let vx = (Math.random() > 0.5 ? 1 : -1) * (1.8 + Math.random()*1.2);
+      let vy = (Math.random() > 0.5 ? 1 : -1) * (1.5 + Math.random()*1.2);
+
+      const colors = ['#ff2d95','#00d4ff','#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#ffd166'];
+      function pick(){ return colors[Math.floor(Math.random()*colors.length)]; }
+
+      let last = null;
+      function frame(t){
+        if (!last) last = t; const dt = (t - last)/16.666; last = t;
+        x += vx * dt; y += vy * dt;
+        let bounced = false;
+
+        if (x <= 0){ x = 0; vx = Math.abs(vx); bounced = true; }
+        if (x + w >= vw){ x = vw - w; vx = -Math.abs(vx); bounced = true; }
+        if (y <= 0){ y = 0; vy = Math.abs(vy); bounced = true; }
+        if (y + h >= vh){ y = vh - h; vy = -Math.abs(vy); bounced = true; }
+
+        if (bounced){
+          const c = pick();
+          dvd.style.background = `linear-gradient(180deg, ${c}22, ${c}11)`;
+          dvd.style.boxShadow = `0 14px 40px rgba(0,0,0,0.6), inset 0 -8px 28px rgba(0,0,0,0.18)`;
+          dvd.style.transform = 'scale(1.06) rotate(' + (Math.random()*8-4) + 'deg)';
+          setTimeout(()=>{ dvd.style.transform = 'scale(1) rotate(0deg)'; },120);
+        }
+
+        dvd.style.left = x + 'px'; dvd.style.top = y + 'px';
+        requestAnimationFrame(frame);
+      }
+
+      requestAnimationFrame(function(){
+        resize();
+        w = dvd.offsetWidth; h = dvd.offsetHeight;
+        dvd.style.left = x + 'px'; dvd.style.top = y + 'px';
+        requestAnimationFrame(frame);
+      });
+
+      window.addEventListener('load', resize);
+    })();
+  </script>
+</body>
+</html>

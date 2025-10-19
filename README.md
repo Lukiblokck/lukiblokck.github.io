@@ -1,61 +1,50 @@
-# Portfolio de Luki - Instrucciones
+# 🌐 Luki Web
 
-Este es un portfolio personal desarrollado con HTML, CSS y JavaScript puro. Aquí tienes las instrucciones para configurarlo correctamente:
+Bienvenido al repositorio oficial de **Luki Web**, un sitio moderno y dinámico desarrollado por **Lukiblokck**.  
+Este proyecto tiene como objetivo mostrar el trabajo, proyectos y habilidades de desarrollo web del autor, combinando diseño visual y funcionalidad.
 
-## Estructura de archivos
+---
 
-El proyecto está dividido en tres archivos principales:
-- `index.html` - Estructura del sitio web
-- `styles.css` - Estilos y diseño visual
-- `script.js` - Funcionalidades interactivas
+## 🚀 Características principales
 
-## Imágenes necesarias
+- 🎨 **Diseño moderno y minimalista** con animaciones suaves y transiciones interactivas.  
+- 🌑 **Modo oscuro** con fondo negro y colores principales verde y rosa.  
+- ⚡ **Estructura optimizada** con HTML, CSS y JavaScript puros.  
+- 💾 **Rendimiento eficiente** y tiempos de carga reducidos.  
+- 🧭 **Secciones principales**:
+  - **Inicio** – Presentación del sitio y enlaces destacados.  
+  - **Proyectos** – Lista interactiva con información de cada proyecto.  
+  - **Contacto** – Formas de comunicación directa (correo, Telegram y Discord).  
+  - **Redes** – Enlaces a perfiles oficiales, incluyendo [guns.lol/lukiblokck](https://guns.lol/lukiblokck).
 
-Para que el sitio funcione correctamente, necesitas agregar las siguientes imágenes en el mismo directorio:
+---
 
-1. `fondo_rejilla_verde.jpg` - La imagen de fondo con la rejilla verde futurista (ya tienes esta imagen)
-2. `perfil_luki.jpg` - Tu imagen de perfil con el gato/personaje blanco con pelo azul (ya tienes esta imagen)
+## 🛠️ Tecnologías utilizadas
 
-## Cómo usar
+- **HTML5**
+- **CSS3** (con animaciones y efectos hover)
+- **JavaScript (ES6+)**
+- **Fuentes personalizadas**: Exo2 Regular, Orbitron Regular y Pixelify Sans Regular.
 
-1. Descarga todos los archivos en una misma carpeta
-2. Asegúrate de que las imágenes estén en la misma carpeta que los archivos HTML, CSS y JS
-3. Abre el archivo `index.html` en tu navegador
+---
 
-## Personalización
+## 📂 Estructura del proyecto
 
-Si quieres personalizar más el sitio:
+📁 LukiWeb/
+┣ 📄 index.html
+┣ 📁 css/
+┃ ┗ 📄 style.css
+┣ 📁 js/
+┃ ┗ 📄 script.js
+┣ 📁 assets/
+┃ ┣ 📄 profile.png
+┃ ┣ 📄 cc.svg
+┃ ┗ 📄 fuentes/
+┗ 📄 README.md
 
-- **Colores**: Puedes modificar las variables de color en la parte superior del archivo `styles.css`
-- **Proyectos**: Modifica las cards de proyectos en `index.html`
-- **Imágenes adicionales**: Si quieres agregar más imágenes, añádelas a la carpeta y referéncialas en el código
+🪪 Licencia
 
-## Características del sitio
+Este proyecto está bajo la licencia Creative Commons BY-NC-ND 4.0
+➡️ No se permite su modificación ni uso comercial.
 
-- Diseño responsivo que se adapta a dispositivos móviles
-- Animaciones al hacer scroll
-- Navegación suave entre secciones
-- Estilo futurista con tema verde que combina con tus imágenes
-
-¡Espero que disfrutes de tu nuevo portfolio! Si tienes alguna pregunta o necesitas ayuda para personalizarlo más, no dudes en preguntar.
-
-
-# Para Python 3
-python3 -m http.server 8080
-
-
-dominio:
-
-1. git clone https://github.com/lukiblokck/lukiblokck.github.io
-
-2. cd username.github.io
-
-echo "Hello World" > index.html
-
-ejemplo
-
-
-
-git add .
-git commit -m "Subo página web"
-git push origin main
+© 2025 Lukiblokck. Todos los derechos reservados.
