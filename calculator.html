@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator xdd</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .calculator {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .display {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            min-height: 60px;
+            font-size: 24px;
+            text-align: right;
+            word-wrap: break-word;
+            border: 2px solid #e9ecef;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            color: #333;
+        }
+
+        button:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .operator {
+            background: #667eea;
+            color: white;
+        }
+
+        .operator:hover {
+            background: #5568d3;
+        }
+
+        .equals {
+            background: #764ba2;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .equals:hover {
+            background: #653a8a;
+        }
+
+        .clear {
+            background: #dc3545;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .clear:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button class="operator" onclick="addToDisplay('/')">/</button>
+            
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button class="operator" onclick="addToDisplay('*')">*</button>
+            
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button class="operator" onclick="addToDisplay('-')">-</button>
+            
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button class="operator" onclick="addToDisplay('+')">+</button>
+            <button class="equals" onclick="calculate()">=</button>
+            
+            <button class="clear" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+
+    <script>
+        let displayValue = '';
+
+        function addToDisplay(value) {
+            displayValue += value;
+            document.getElementById('display').textContent = displayValue;
+        }
+
+        function clearDisplay() {
+            displayValue = '';
+            document.getElementById('display').textContent = '';
+        }
+
+        function calculate() {
+            document.getElementById('display').textContent = 'idk just leave me alone :(';
+            displayValue = '';
+        }
+    </script>
+</body>
+</html>
