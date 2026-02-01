@@ -1,450 +1,551 @@
-/* Carga las fuentes TTF locales */
-@font-face {
-  font-family: 'Exo2';
-  src: url('fonts/Exo2-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+/* ============================================
+   LUKI PORTFOLIO — styles.css
+   Theme: Linux Terminal / Retro-Tech
+   Font: PixelifySans-Regular.ttf
+   Colors:
+     bg-dark      #1a1a1a / #111111
+     green        #10b981 (primary accent)
+     neon-pink    #ff2d95 (secondary accent)
+   ============================================ */
 
-@font-face {
-  font-family: 'Orbitron';
-  src: url('fonts/Orbitron-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+/* ---------- FONT FACE ---------- */
 @font-face {
   font-family: 'PixelifySans';
-  src: url('fonts/PixelifySans-Regular.ttf') format('truetype');
+  src: url('PixelifySans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-/* Variables para colores y fuentes */
+/* ---------- CSS VARIABLES ---------- */
 :root {
-  --color-principal: #00ff88; /* verde */
-  --color-secundario: #ff00aa; /* rosa */
-  --fondo: #000000; /* fondo negro */
-  --fuente-texto: 'Exo2', sans-serif;
-  --fuente-titulo: 'Orbitron', sans-serif;
-  --fuente-nombre: 'PixelifySans', sans-serif;
+  --bg-base:       #111111;
+  --bg-panel:      #1a1a1a;
+  --bg-panel-hover:#222222;
+  --green:         #10b981;
+  --green-dim:     #0d9467;
+  --green-glow:    rgba(16, 185, 129, 0.35);
+  --pink:          #ff2d95;
+  --pink-dim:      #e6267f;
+  --pink-glow:     rgba(255, 45, 149, 0.30);
+  --text-primary:  #e2e8f0;
+  --text-muted:    #6b7280;
+  --border:        #2a2a2a;
+  --border-accent: #333333;
+  --font:          'PixelifySans', monospace;
+  --radius:        6px;
+  --transition:    0.25s ease;
 }
 
-/* Reset y configuración base */
-* {
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  width: 100%;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Estilos base */
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  font-family: var(--font);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
   min-height: 100vh;
-  background-color: var(--fondo);
-  color: white;
-  font-family: var(--fuente-texto);
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* Header con barra superior */
-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #111111;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  line-height: 1.6;
+  /* subtle scanline overlay for CRT feel */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
 }
 
-/* Imagen de perfil en header */
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+a:hover {
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink-glow);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 32px 20px;
+  text-align: center;
+  position: relative;
+  /* top green glow line */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* "window dots" pseudo-element — top-left of header */
+header::before {
+  content: '● ● ●';
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--text-muted);
+}
+
+/* green accent bar on top edge */
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--pink), var(--green));
+}
+
 .perfil-img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-principal);
-  flex-shrink: 0;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 14px var(--green-glow);
+  margin: 0 auto 12px;
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
 
-/* Navegación */
+.perfil-img:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 18px var(--pink-glow);
+}
+
+header h1 {
+  font-family: var(--font);
+  font-size: 1.4rem;
+  color: var(--green);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px var(--green-glow);
+}
+
+/* ---------- NAV ---------- */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 nav ul li a {
-  color: var(--color-principal);
-  text-decoration: none;
-  font-family: var(--fuente-titulo);
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: transform 0.3s, color 0.3s;
-  white-space: nowrap;
-}
-
-nav ul li a:hover {
-  transform: scale(1.1);
-  color: var(--color-secundario);
-}
-
-/* Sección principal */
-main {
-  padding: 2rem;
-  width: 100%;
-  max-width: 100vw;
-}
-
-/* Títulos en general */
-h1, h2, h3, h4, h5 {
-  font-family: var(--fuente-titulo);
-  color: var(--color-principal);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  word-wrap: break-word;
-}
-
-/* Para nombres, títulos pequeños o destacados */
-.nombre {
-  font-family: var(--fuente-nombre);
-  color: var(--color-secundario);
-  font-size: 2rem;
-  word-wrap: break-word;
-}
-
-/* Redes sociales */
-.redes {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.redes a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--color-secundario);
-  font-family: var(--fuente-nombre);
-  font-size: 1.2rem;
-  transition: color 0.3s;
-  word-wrap: break-word;
-}
-
-.redes a:hover {
-  color: var(--color-principal);
-}
-
-.github {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.github a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--color-secundario);
-  font-family: var(--fuente-nombre); /* PixelifySans */
-  font-size: 1.2rem;
-  transition: color 0.3s;
-  word-wrap: break-word;
-}
-
-.github a:hover {
-  color: var(--color-principal);
-}
-
-/* Mini logo en redes */
-.mini-logo {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-/* Galería de proyectos */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* celdas un poco más estrechas */
-  gap: 1rem;
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.galeria img {
-  width: 90%;              /* imágenes un poco más pequeñas */
-  height: auto;
-  border: 2px solid var(--color-principal); /* borde un poco más delgado */
-  border-radius: 8px;
-  transition: transform 0.3s, border-color 0.3s;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;          /* centra la imagen dentro de la celda */
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
-  border-color: var(--color-secundario);
-}
-
-/* Contacto */
-#contacto ul {
-  list-style: none;
-  padding: 0;
-  word-wrap: break-word;
-}
-
-#contacto a {
-  color: var(--color-principal);
-  text-decoration: underline;
-  transition: color 0.3s;
-  word-wrap: break-word;
-}
-
-#contacto a:hover {
-  color: var(--color-secundario);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: white;
-  background-color: #111111;
-  font-family: var(--fuente-titulo);
-  font-size: 14px;
-  border-top: 1px solid var(--color-principal);
-  user-select: none;
-  width: 100%;
-  margin-top: auto;
-}
-
-footer p:hover {
-  color: var(--color-secundario);
-  transition: color 0.3s ease;
-}
-
-.descripcion-proyectos textarea {
-  background-color: #111;
-  border: 2px solid var(--color-principal);
-  color: white;
-  resize: vertical;
-  border-radius: 5px;
-  transition: border-color 0.3s;
-  width: 100%;
-  max-width: 100%;
-}
-
-.descripcion-proyectos textarea:focus {
-  outline: none;
-  border-color: var(--color-secundario);
-}
-
-.guns-link span {
-  font-family: 'PixelifySans', sans-serif;
-  font-weight: bold;
-  color: #ff00aa;
-  word-wrap: break-word;
-}
-
-/* Media queries para responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  nav ul {
-    gap: 1rem;
-    justify-content: center;
-  }
-  
-  nav ul li a {
-    font-size: 1rem;
-  }
-  
-  main {
-    padding: 1rem;
-  }
-  
-  .nombre {
-    font-size: 1.5rem;
-  }
-  
-  .galeria {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 0.5rem;
-  }
-  
-  nav ul {
-    gap: 0.5rem;
-    flex-direction: column;
-  }
-  
-  .perfil-img {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .nombre {
-    font-size: 1.2rem;
-  }
-  
-  main {
-    padding: 0.5rem;
-  }
-}
-
-/* GitHub Stats responsive - añadir al final de tu styles.css */
-
-/* Hacer que las imágenes de GitHub Stats sean responsive */
-img[src*="github-readme-stats"],
-img[src*="vercel.app"],
-img[src*="komarev.com"] {
-  max-width: 100%;
-  height: auto;
-  width: auto;
   display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  background: transparent;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 
-/* Contenedor de GitHub Stats */
-.info div[style*="text-align:center"] {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Asegurar que las imágenes dentro de enlaces también sean responsive */
-.info a img {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-
-/* Media queries específicas para GitHub Stats */
-@media (max-width: 768px) {
-  img[src*="github-readme-stats"],
-  img[src*="vercel.app"],
-  img[src*="komarev.com"] {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Reducir un poco el margen en móvil */
-  .info div[style*="text-align:center"] {
-    padding: 0 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  img[src*="github-readme-stats"],
-  img[src*="vercel.app"],
-  img[src*="komarev.com"] {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0.25rem 0;
-  }
-  
-  /* Asegurar que no haya overflow horizontal */
-  .info div[style*="text-align:center"] {
-    padding: 0 0.25rem;
-    box-sizing: border-box;
-  }
-  
-  /* Sección del formulario */
-#mailme {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #111;
-  border: 1px solid #00ff88;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--green-dim);
+  border-color: var(--green);
   color: #fff;
-  font-family: "Orbitron", sans-serif;
+  box-shadow: 0 0 8px var(--green-glow);
+  text-shadow: none;
 }
 
-/* Título */
-#mailme h3 {
-  text-align: center;
-  font-size: 1.5em;
-  color: #00ff88;
-  margin-bottom: 20px;
-}
-
-/* Etiquetas */
-#mailme label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #ff00aa;
-}
-
-/* Inputs y textarea */
-#mailme input[type="text"],
-#mailme textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #00ff88;
-  border-radius: 8px;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 1em;
-  outline: none;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-#mailme input[type="text"]:focus,
-#mailme textarea:focus {
-  border-color: #ff00aa;
-  box-shadow: 0 0 10px #ff00aa;
-}
-
-/* Botón enviar */
-#mailme input[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00ff88, #ff00aa);
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-#mailme input[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(255, 0, 170, 0.7);
-}
-
-footer {
+/* ---------- MAIN ---------- */
+main {
+  flex: 1;
+  max-width: 780px;
+  width: 90%;
+  margin: 32px auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ---------- PANELS ---------- */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  position: relative;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.panel:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+/* panel "title bar" dot — left of h2 */
+.panel h2 {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  color: var(--green);
+  margin-bottom: 12px;
+  padding-left: 18px;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.panel h2::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--pink);
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 1px;
+}
+
+.panel p {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* ---------- PROJECT CARDS ---------- */
+
+#projectsPanel {
+  display: block;
+}
+
+/* Grid layout: [image 100px] [h3 + p stacked] */
+.project {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 22px;
+  align-items: start;
+}
+
+.project .project-img {
+  grid-row: 1 / -1; /* image spans both rows (h3 + p) */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-accent);
+  background: var(--bg-base);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.project:hover .project-img {
+  border-color: var(--pink);
+  box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.project h3 {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--pink);
+  margin-bottom: 4px;
+  align-self: end; /* pega al borde inferior de su celda, junto al p */
+  text-shadow: 0 0 6px var(--pink-glow);
+}
+
+.project > p {
+  font-size: 0.88rem;
+  align-self: start;
+}
+
+
+/* ---------- TECH ICONS ROW ---------- */
+#panel1 p,
+#panel2 p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+  padding-top: 4px;
+}
+
+#panel1 p a,
+#panel2 p a {
+  display: inline-block !important; /* HTML has inline style, match it explicitly */
+  width: 48px;
+  height: 48px;
+  position: relative;
+  background: var(--bg-base);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+#panel1 p a:hover,
+#panel2 p a:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+  transform: translateY(-3px);
+  text-shadow: none;
+}
+
+#panel1 p a img,
+#panel2 p a img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  padding: 20px 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font);
+}
+
+footer a {
+  display: inline-flex;
   align-items: center;
 }
 
+footer a img {
+  opacity: 0.6;
+  transition: opacity var(--transition);
+}
+
+footer a:hover img {
+  opacity: 1;
+}
+
+/* ---------- CONTACT FORM (contact.html) ---------- */
+
+/* the HTML has <br> between every element — kill them so flex gap controls spacing */
+#contactPanel form br {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* each label + input pair grouped with a little bottom margin */
+form label {
+  font-size: 0.82rem;
+  color: var(--green);
+  font-family: var(--font);
+  margin-top: 10px;
+}
+
+form label:first-child {
+  margin-top: 0;
+}
+
+form input,
+form textarea {
+  background: var(--bg-base);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  outline: none;
+  width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+form button {
+  align-self: flex-start;
+  background: var(--green-dim);
+  color: #fff;
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  padding: 10px 28px;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-top: 14px;
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+form button:hover {
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green-glow);
+  transform: translateY(-2px);
+}
+
+/* ---------- CONTACT LINKS (second half of contactPanel) ---------- */
+
+/* divider line + second h2 as a separator */
+#contactPanel h2 + p + form + h2 {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+#contactPanel ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#contactPanel ul li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-family: var(--font);
+}
+
+#contactPanel ul li a {
+  color: var(--green);
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+#contactPanel ul li a:hover {
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink-glow);
+}
+
+/* the last <p> "Feel free..." */
+#contactPanel > p:last-of-type {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dim);
+}
+
+/* ---------- SELECTION ---------- */
+::selection {
+  background: var(--green-dim);
+  color: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  header {
+    padding: 28px 16px 18px;
+  }
+
+  header::before {
+    top: 8px;
+    left: 10px;
+    font-size: 8px;
+  }
+
+  main {
+    width: 94%;
+    margin: 20px auto;
+  }
+
+  .panel {
+    padding: 18px 18px;
+  }
+
+  .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #projectPanel2 > .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
+    padding: 22px 18px;
+  }
+
+  .project .project-img {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+  }
+
+  nav ul {
+    gap: 6px;
+  }
+
+  nav ul li a {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
 }

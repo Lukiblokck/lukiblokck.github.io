@@ -1,95 +1,88 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Meta Tags -->
-  <meta name="author" content="Luki">
-  <meta name="keywords" content="developer, programmer, Discord bot, web app, projects, Luki, Lukiblokck, portfolio, coding, technology">
-  <meta name="robots" content="index, follow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Meta Tags -->
+    <meta name="author" content="Luki">
+    <meta name="keywords" content="developer, programmer, Discord bot, web app, projects, Luki, Lukiblokck, portfolio, coding, technology, contact">
+    <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Discord, WhatsApp, Facebook, etc.) -->
-  <meta property="og:title" content="Luki - Contact Me | Developer Site">
-  <meta property="og:description" content="Get in touch with me! Email, Discord, Telegram or check my guns.lol profile.">
-  <meta property="og:image" content="https://lukiblokck.github.io/profile.png">
-  <meta property="og:url" content="https://lukiblokck.github.io/contact.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Luki Portfolio">
-  
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Luki - Contact Me | Developer Site">
-  <meta name="twitter:description" content="Get in touch with me! Email, Discord, Telegram or check my guns.lol profile.">
-  <meta name="twitter:image" content="https://lukiblokck.github.io/profile.png">
-  
-  <!-- Meta description tradicional -->
-  <meta name="description" content="Get in touch with me! Email, Discord, Telegram or check my guns.lol profile.">
-  
-  <!-- Color del tema -->
-  <meta name="theme-color" content="#10b981">
-  
-  <title>Luki - Contact Me</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.png" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Luki - Contact Me | Portfolio">
+    <meta property="og:description" content="Get in touch with me!">
+    <meta property="og:image" content="https://lukiblokck.github.io/profile.png">
+    <meta property="og:url" content="https://lukiblokck.github.io/contactme.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Luki's Portfolio">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luki - Contact Me | Portfolio">
+    <meta name="twitter:description" content="Get in touch with me!">
+    <meta name="twitter:image" content="https://lukiblokck.github.io/profile.png">
+    
+    <!-- Description -->
+    <meta name="description" content="Get in touch with me!">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#10b981">
+    
+    <title>Luki - Contact Me</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="profile.png" type="image/png">
 </head>
 <body>
-
-  <header>
+  <header id="contactHeader">
     <img src="profile.png" alt="My Profile" class="perfil-img" />
+    <h1>Contact Me</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="about.html">About Me</a></li>
         <li><a href="projects.html">Projects</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="mailme">
-      <h3>Mail me:</h3>
-      <form action="https://formsubmit.co/lukiblokck@proton.me" method="POST">
-        <label for="nombre">Your name:</label><br />
-        <input type="text" id="nombre" name="nombre" required /><br /><br />
+    <section class="panel" id="contactPanel">
+            <h2>Contact Me</h2>
+            <p>Send me a message directly from here! I’ll try to reply as soon as possible. 😄</p>
 
-        <label for="mensaje">Your message:</label><br />
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br /><br />
+            <form action="https://formspree.io/f/xqebroyp" method="POST">
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required /><br><br>
 
-        <!-- Opcional: evita spam -->
-        <input type="hidden" name="_captcha" value="false">
+                <label for="email">Your Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required /><br><br>
 
-        <input type="submit" value="Enviar mensaje" />
-      </form>
-    </section>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea><br><br>
 
-    <section id="contacto">
-      <h2>Contact Me</h2>
-      <ul>
-        <li>Email: <a href="mailto:lukiblokck@proton.me">lukiblokck@proton.me</a></li>
-        <li>Telegram: <a href="https://t.me/Lukiblokck" target="_blank" rel="noopener noreferrer">@Lukiblokck</a></li>
-        <li>Discord: 
-          <a href="https://discord.com/users/1121089195230888036" target="_blank" rel="noopener noreferrer">@lukiblokck</a>
-        </li>
-      </ul>
-    </section>
-
-    <section id="guns.lol">
-      <h2>🎯 Guns.lol Profile</h2>
-      <p>
-        Check my guns.lol stats and profile here: 
-        <a href="https://guns.lol/lukiblokck" target="_blank" rel="noopener noreferrer">
-          @lukiblokck
-        </a>
-      </p>
+                <button type="submit">Send Message</button>
+            </form>
+        <h2>Contact Me</h2>
+        <p>
+        You can reach me through the following methods:
+        </p>
+        <ul>
+            <li>Email: <a href="mailto:lukiblokck@proton.me">lukiblokck@example.com</a></li>
+            <li>Discord: <a href="https://discord.com/user/1121089195230888036" target="_blank">Luki</a></li>
+            <li>Telegram: <a href="https://t.me/lukiblokck" target="_blank">lukiblokck</a></li>
+        </ul>
+        <p>Feel free to send me a message! I’ll try to reply as soon as possible. :D</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2017 - 2025 Lukiblokck. All rights reserved.</p>
+    <p>© 2026 Lukiblokck. All rights reserved.</p>
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
       <img src="cc.svg" alt="Creative Commons BY-NC-ND 4.0 License" width="88" height="31">
     </a>
   </footer>
 
+  <script src="scripts.js"></script>
 </body>
 </html>

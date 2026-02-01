@@ -1,84 +1,99 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Meta Tags -->
-  <meta name="author" content="Luki">
-  <meta name="keywords" content="developer, programmer, Discord bot, web app, projects, Luki, Lukiblokck, portfolio, coding, technology">
-  <meta name="robots" content="index, follow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Meta Tags -->
+    <meta name="author" content="Luki">
+    <meta name="keywords" content="developer, programmer, Discord bot, web app, projects, Luki, Lukiblokck, portfolio, coding, technology, projects">
+    <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Discord, WhatsApp, Facebook, etc.) -->
-  <meta property="og:title" content="Luki - Projects | Developer Site">
-  <meta property="og:description" content="Discover all the projects I've created on my website.">
-  <meta property="og:image" content="https://lukiblokck.github.io/profile.png">
-  <meta property="og:url" content="https://lukiblokck.github.io/projects.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Luki Portfolio">
-  
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Luki - Projects | Developer Site">
-  <meta name="twitter:description" content="Discover all the projects I've created on my website.">
-  <meta name="twitter:image" content="https://lukiblokck.github.io/profile.png">
-  
-  <!-- Meta description tradicional -->
-  <meta name="description" content="Discover all the projects I've created on my website.">
-  
-  <!-- Color del tema -->
-  <meta name="theme-color" content="#10b981">
-  
-  <title>Luki - Projects</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.png" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Luki - Projects | Portfolio">
+    <meta property="og:description" content="Check out my latest projects and creations!">
+    <meta property="og:image" content="https://lukiblokck.github.io/profile.png">
+    <meta property="og:url" content="https://lukiblokck.github.io/projects.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Luki's Portfolio">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luki - Projects | Portfolio">
+    <meta name="twitter:description" content="Check out my latest projects and creations!">
+    <meta name="twitter:image" content="https://lukiblokck.github.io/profile.png">
+    
+    <!-- Description -->
+    <meta name="description" content="Check out my latest projects and creations!">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#10b981">
+    
+    <title>Luki - Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="profile.png" type="image/png">
 </head>
 <body>
-  <header>
+  <header id="projectsHeader">
     <img src="profile.png" alt="My Profile" class="perfil-img" />
+    <h1>Projects</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact Me</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="proyectos">
-      <h2>Projects</h2>
-
-      <div class="galeria">
-        <img src="project1.jpg" alt="Proyecto 1" />
-        <img src="project2.jpg" alt="Proyecto 2" />
-      </div>
-
-      <div class="descripcion-proyectos">
-        <h3>Decription:</h3>
+    <section class="panel" id="projectsPanel">
+        <h2>My Projects</h2>
         <p>
-          My projects:<br />
-          <strong>🛠 BRAWNIVERSE SYSTEM:</strong> My official BRAWNIVERSE bot for a Brawl Stars community.<br />
-          <strong>🤖 PYTHYKON BOT:</strong> A Discord bot using Python & Pycord.<br />
-          <strong>🎮 PYTHYKON ESPORTS:</strong> An esports with a community, a bot, and a website.<br />
-          <strong>💻 LukiSOFTWARE:</strong> A basic OS simulation in C++ with a Windows 11-inspired UI.<br />
-          <strong>📱 BronnikoFyut:</strong> A futuristic social media platform.<br />
-          <strong>💰 LukiMoneda:</strong> A futuristic social media platform (not finished).<br />
-          <strong>🏆 Mega Tours Bot:</strong> I'm contributing on a bot for a server of Stumble Guys.<br />
-          <strong>🥘 Paella Tours Bot:</strong> Its another bot for a community of Stumble Guys.<br />
-          <strong>🎮 PS4 Controller Light Color Editor Tool:</strong> It's a C# project, you connect your PS4 Controller and you can edit the light color.<br />
-          <strong>🤖 FNaF Core Bots:</strong> A series of Discord bots themed around Five Nights at Freddy's.<br />
-          <strong>🌐 Personal Portfolio Website:</strong> A website to showcase my projects and skills (This website).<br />
-          <strong>🐻 FNaF Core Website:</strong> It's a website for FNaF Core community.<br />
+        Here are some of my projects that showcase my skills and creativity:
         </p>
-      </div>
+    </section>
+    
+    <section class="panel project" id="projectPanel1">
+        <img src="projects/fnaf.png" alt="FNaF Core Bots" class="project-img" />
+        <h3>FNaF Core bots and website</h3>
+        <p>
+            These are some Discord bots for a Five Nights at Freddy's community, the bots are written in Python. The website is written in HTML, CSS and JS, its a simple website just for a very little community.
+        </p>
+    </section>
+
+    <section class="panel project" id="projectPanel2">
+        <img src="projects/brawniverse.jpg" alt="Brawnivere Logo" class="project-img" />
+        <h3>Brawniverse Core</h3>
+        <p>
+            Its another bot made with Python for a Brawl Stars community in Discord.
+        </p>
+    </section>
+
+    <section class="panel project" id="projectPanel3">
+        <img src="projects/colors.png" alt="PS4 Controller Tool" class="project-img" />
+        <h3>PS4 Controller Light Color Editor Tool</h3>
+        <p>
+            Its a little program written in C#, you have to connect your PS4 controller to your PC and you change your controller's color.
+        </p>
+    </section>
+
+    <section class="panel project" id="projectPanel4">
+        <img src="https://raspberrypi.com/app/uploads/2022/02/COLOUR-Raspberry-Pi-Symbol-Registered-300x300.png" alt="Raspberry Pi Logo" class="project-img" />
+        <h3>Raspberry Pi 5</h3>
+        <p>
+            I use a Raspberry Pi 5 to host my servers, its a little server.
+        </p>
     </section>
   </main>
 
   <footer>
-    <p>© 2017 - 2025 Lukiblokck. All rights reserved.</p>
+    <p>© 2026 Lukiblokck. All rights reserved.</p>
     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
       <img src="cc.svg" alt="Creative Commons BY-NC-ND 4.0 License" width="88" height="31">
     </a>
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
