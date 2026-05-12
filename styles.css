@@ -4,8 +4,8 @@
    Font: PixelifySans-Regular.ttf
    Colors:
      bg-dark      #1a1a1a / #111111
-     green        #10b981 (primary accent)
-     neon-pink    #ff2d95 (secondary accent)
+     teal         #1A9EA8 (primary accent, from hair/outfit)
+     pink         #F070A0 (secondary accent, from bg)
    ============================================ */
 
 /* ---------- FONT FACE ---------- */
@@ -22,12 +22,12 @@
   --bg-base:       #111111;
   --bg-panel:      #1a1a1a;
   --bg-panel-hover:#222222;
-  --green:         #10b981;
-  --green-dim:     #0d9467;
-  --green-glow:    rgba(16, 185, 129, 0.35);
-  --pink:          #ff2d95;
-  --pink-dim:      #e6267f;
-  --pink-glow:     rgba(255, 45, 149, 0.30);
+  --green:         #1A9EA8;
+  --green-dim:     #157f88;
+  --green-glow:    rgba(26, 158, 168, 0.35);
+  --pink:          #F070A0;
+  --pink-dim:      #d45c88;
+  --pink-glow:     rgba(240, 112, 160, 0.30);
   --text-primary:  #e2e8f0;
   --text-muted:    #6b7280;
   --border:        #2a2a2a;
@@ -90,7 +90,6 @@ header {
   padding: 24px 32px 20px;
   text-align: center;
   position: relative;
-  /* top green glow line */
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -105,7 +104,7 @@ header::before {
   color: var(--text-muted);
 }
 
-/* green accent bar on top edge */
+/* teal/pink accent bar on top edge */
 header::after {
   content: '';
   position: absolute;
@@ -244,7 +243,7 @@ main {
 }
 
 .project .project-img {
-  grid-row: 1 / -1; /* image spans both rows (h3 + p) */
+  grid-row: 1 / -1;
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -264,7 +263,7 @@ main {
   font-size: 1rem;
   color: var(--pink);
   margin-bottom: 4px;
-  align-self: end; /* pega al borde inferior de su celda, junto al p */
+  align-self: end;
   text-shadow: 0 0 6px var(--pink-glow);
 }
 
@@ -287,7 +286,7 @@ main {
 
 #panel1 p a,
 #panel2 p a {
-  display: inline-block !important; /* HTML has inline style, match it explicitly */
+  display: inline-block !important;
   width: 48px;
   height: 48px;
   position: relative;
@@ -354,7 +353,6 @@ footer a:hover img {
 
 /* ---------- CONTACT FORM (contact.html) ---------- */
 
-/* the HTML has <br> between every element — kill them so flex gap controls spacing */
 #contactPanel form br {
   display: none;
 }
@@ -367,7 +365,6 @@ form {
   margin-bottom: 0;
 }
 
-/* each label + input pair grouped with a little bottom margin */
 form label {
   font-size: 0.82rem;
   color: var(--green);
@@ -432,10 +429,9 @@ form button:hover {
   transform: translateY(-2px);
 }
 
-/* ---------- CONTACT LINKS (second half of contactPanel) ---------- */
+/* ---------- CONTACT LINKS ---------- */
 
-/* divider line + second h2 as a separator */
-#contactPanel h2 + p + form + h2 {
+#contactPanel .contact-divider {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -466,7 +462,6 @@ form button:hover {
   text-shadow: 0 0 8px var(--pink-glow);
 }
 
-/* the last <p> "Feel free..." */
 #contactPanel > p:last-of-type {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -518,26 +513,19 @@ form button:hover {
     padding: 18px 18px;
   }
 
+  /* Fix: project uses grid, not flex */
   .project {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
     text-align: center;
-  }
-
-  #projectPanel2 > .project {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: calc(100% + 36px);
-    margin-left: -18px;
-    margin-right: -18px;
-    padding: 22px 18px;
   }
 
   .project .project-img {
+    grid-row: auto;
     width: 90px;
-    min-width: 90px;
     height: 90px;
+    margin-bottom: 12px;
   }
 
   nav ul {
