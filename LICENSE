@@ -1,0 +1,312 @@
+# LICENSE
+
+## Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International  
+### (CC BY-NC-ND 4.0)
+
+Copyright (c) 2026 LUKIBLOKCK
+
+---
+
+# Introduction
+
+This project, including all source code, assets, configurations, documentation, branding elements, designs, scripts, binaries, concepts, and related materials, is protected under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
+
+The purpose of this license is to allow the community to access, study, and share this project while protecting the original work from unauthorized commercial use, redistribution of modified versions, or misuse of the project’s identity and structure.
+
+By accessing, downloading, copying, forking, viewing, redistributing, or using any part of this repository, you acknowledge and agree to the terms described in this license.
+
+---
+
+# What You Are Allowed To Do
+
+Under this license, you are permitted to:
+
+- View and study the source code and project structure.
+- Download and locally use the project for personal and educational purposes.
+- Share the original and unmodified version of the project.
+- Redistribute exact copies of the repository while preserving attribution and this license notice.
+- Use the project for research, learning, inspiration, and reference purposes.
+- Archive or mirror the original project for preservation purposes, provided no modifications are distributed.
+
+These permissions are granted worldwide, royalty-free, and non-exclusive under the conditions listed below.
+
+---
+
+# Conditions Of Use
+
+## 1. Attribution Requirement
+
+You must provide clear and visible credit to the original creator whenever you share or redistribute this project.
+
+Proper attribution must include:
+- The original project name.
+- The name or username of the original author.
+- A link to the original repository when possible.
+- A reference to this license.
+- A statement indicating that the work is licensed under CC BY-NC-ND 4.0.
+
+Example attribution:
+
+> “Original project created by [YOUR NAME]. Licensed under CC BY-NC-ND 4.0.”
+
+You may not imply that the original author endorses you, your modifications, or your usage of the project.
+
+---
+
+## 2. Non-Commercial Restriction
+
+You may NOT use this project or any part of it for commercial purposes.
+
+Commercial use includes, but is not limited to:
+- Selling copies of the project.
+- Selling modified versions.
+- Including the project in paid software bundles.
+- Using the project in monetized services or platforms.
+- Using the project to generate advertising revenue.
+- Hosting paid versions of the software.
+- Selling access to instances of the project.
+- Using the project inside commercial SaaS products.
+- Offering paid support specifically for redistributed versions of this project.
+- Minting or selling assets from this project as NFTs or digital collectibles.
+- Using project branding, logos, or assets for commercial identity purposes.
+
+If you wish to use this project commercially, you must obtain explicit written permission from the copyright holder.
+
+---
+
+## 3. No Derivatives
+
+You may NOT distribute modified versions of this project.
+
+This includes:
+- Forks with edited code.
+- Rebranded versions.
+- Modified assets or graphics.
+- Edited documentation.
+- Patched binaries.
+- Altered configurations intended for redistribution.
+- Ports to other platforms distributed publicly.
+- Custom builds shared with third parties.
+- Modified installers or packages.
+- AI-generated variants derived directly from the repository contents.
+
+You are allowed to privately modify the project for personal use only, but you may not publish, upload, sell, distribute, or share those modified versions in any form.
+
+---
+
+# Repository Content Coverage
+
+This license applies to all contents of the repository, including but not limited to:
+
+- Source code
+- Scripts
+- APIs
+- Documentation
+- Images
+- Textures
+- Audio files
+- Video files
+- Icons
+- Logos
+- Branding
+- Fonts
+- User interface designs
+- Configuration files
+- Build systems
+- Project structure
+- Internal concepts and designs
+- Downloadable releases
+- Generated binaries
+- Custom tools
+- Database structures
+- Shader files
+- Animation assets
+- Web assets
+- CSS/JS resources
+- Localization files
+
+Unless explicitly stated otherwise inside a specific file or folder.
+
+---
+
+# Educational And Research Usage
+
+Educational institutions, students, researchers, and independent learners may use this project for:
+- Learning purposes.
+- Academic demonstrations.
+- Research and analysis.
+- Security auditing.
+- Reverse engineering for educational understanding.
+- Classroom examples.
+- Portfolio demonstrations referencing the original repository.
+
+However, redistribution of modified versions is still prohibited.
+
+---
+
+# Forking Policy
+
+GitHub forks created automatically through GitHub’s built-in functionality are tolerated for visibility and collaboration purposes only if:
+- The fork remains public under the same license.
+- Proper attribution remains intact.
+- No commercial activity occurs.
+- No modified releases are distributed outside the platform.
+- The original license and copyright notices remain untouched.
+
+The author reserves the right to request removal of forks that violate these conditions.
+
+---
+
+# Trademark And Branding Restrictions
+
+The following elements remain exclusive property of their respective owners:
+- Project name
+- Logos
+- Icons
+- Brand identity
+- Mascots
+- Slogans
+- Visual identity
+- Domain names
+- Social media branding
+- Community assets
+
+Permission to use the source code does NOT grant permission to impersonate, clone, or represent yourself as the official project or maintainers.
+
+---
+
+# Warranty Disclaimer
+
+THIS PROJECT IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+The author makes no guarantees regarding:
+- Stability
+- Security
+- Reliability
+- Compatibility
+- Performance
+- Availability
+- Safety
+- Fitness for a particular purpose
+
+You use this project entirely at your own risk.
+
+The author shall not be held liable for:
+- Data loss
+- System damage
+- Security breaches
+- Financial losses
+- Service interruptions
+- Legal issues
+- Hardware failures
+- Misuse by third parties
+- Any indirect or direct damages resulting from usage of the project
+
+---
+
+# Security Notice
+
+Users are responsible for reviewing and auditing the code before running it in production or sensitive environments.
+
+The author is not responsible for:
+- Misconfigurations
+- Unsafe deployments
+- Exposed secrets
+- Improper server administration
+- Third-party integrations
+- Vulnerabilities introduced by unofficial modifications
+
+Always use secure development and deployment practices.
+
+---
+
+# Third-Party Components
+
+This repository may include references to third-party libraries, frameworks, fonts, APIs, or assets.
+
+Those components may have their own licenses and terms that must also be respected.
+
+You are responsible for reviewing and complying with any applicable third-party licenses.
+
+---
+
+# Termination
+
+Any violation of this license will automatically terminate your rights under this agreement.
+
+Upon termination, you must:
+- Stop using the project.
+- Remove distributed copies under your control.
+- Cease any unauthorized redistribution or commercial activity.
+
+Termination does not remove any rights already granted to other compliant users.
+
+---
+
+# Future License Changes
+
+The author reserves the right to:
+- Re-license future versions.
+- Introduce dual licensing.
+- Change distribution terms.
+- Offer commercial licenses separately.
+- Add contributor agreements in future updates.
+
+Previously released versions will remain under the license provided at the time of their publication unless explicitly stated otherwise.
+
+---
+
+# Community Guidelines
+
+Users interacting with this project are encouraged to:
+- Respect the original work.
+- Contribute ideas respectfully.
+- Avoid plagiarism or impersonation.
+- Share feedback constructively.
+- Credit creators properly.
+- Maintain ethical usage standards.
+
+Healthy collaboration and transparency help improve the ecosystem around the project.
+
+---
+
+# Legal Summary
+
+In simple terms:
+
+You CAN:
+- View the source code.
+- Learn from it.
+- Share the original project.
+- Use it personally and educationally.
+
+You CANNOT:
+- Sell it.
+- Monetize it.
+- Redistribute modified versions.
+- Rebrand it as your own.
+- Commercially exploit the project.
+- Remove attribution or license notices.
+
+---
+
+# Official License Links
+
+Full Legal License Text:  
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+Human-Readable Summary:  
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+Creative Commons Official Website:  
+https://creativecommons.org/
+
+---
+
+# Final Notice
+
+This repository represents many hours of development, experimentation, learning, debugging, designing, and creative effort.
+
+Please respect the license terms, support original creators, and help maintain a fair and open development community.
+
+Thank you for using and supporting this project.
